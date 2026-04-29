@@ -1,4 +1,5 @@
 import { pool } from "../config/db.js";
+import { createNotification } from "./notificationController.js";
 
 // CREATE NOTE
 export const createNote = async (req, res) => {
@@ -10,6 +11,18 @@ export const createNote = async (req, res) => {
        VALUES ($1,$2,$3,$4) RETURNING *`,
       [client_id, req.user.id, note_content, note_type]
     );
+
+    // 🔔 CREATE NOTIFICATIONS FOR SUPER USERS
+    const superUsers = await pool.query(
+      `SELECT user_id FROM users WHERE role = 'super_user'`
+    );
+
+    for (let user of superUsers.rows) {
+      await createNotification(
+        user.user_id,
+        `New note added for client ID ${client_id}`
+      );
+    }
 
     res.status(201).json(result.rows[0]);
   } catch (err) {
