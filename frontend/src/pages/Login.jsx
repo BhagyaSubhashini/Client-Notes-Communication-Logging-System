@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,7 +11,7 @@ function Login() {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-
+  const { login } = useAuth();
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -28,11 +30,11 @@ function Login() {
         throw new Error(data.message || "Login failed");
       }
 
-      // ✅ STORE TOKEN + USER
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      // STORE TOKEN + USER
+      login(data.user, data.token);
+      toast.success("Login successful");
 
-      // ✅ ROLE BASED REDIRECT
+      // ROLE BASED REDIRECT
       if (data.user.role === "super_user") {
         navigate("/super-dashboard");
       } else {
@@ -40,7 +42,7 @@ function Login() {
       }
 
     } catch (err) {
-      setError(err.message);
+      toast.error(err.message);
     }
   };
 

@@ -11,7 +11,7 @@ export const pool = new Pool({
   },
 });
 
-// ✅ Handle unexpected errors (PREVENT CRASH)
+// Handle unexpected errors
 pool.on("error", (err) => {
   console.error("Unexpected DB error:", err);
 });
