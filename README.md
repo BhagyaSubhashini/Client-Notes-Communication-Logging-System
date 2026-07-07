@@ -1,40 +1,62 @@
-````markdown
-# Client Notes & Communication Logging System
+<div align="center">
 
-A centralized web-based communication logging platform developed to help organizations manage client interactions efficiently. The system enables support teams to maintain a complete history of client communications, ensuring that every staff member has the necessary context before responding to a client.
+# 📒 Client Notes & Communication Logging System
 
-This project was developed for **ITX Digital Services (PVT) LTD** as a final software solution to improve internal communication, client support, and record management.
+### A Centralized Communication Management Platform for Client Support Teams
 
----
+<p align="center">
+A modern web application built to centralize client communication, maintain complete interaction history, improve collaboration among support staff, and ensure every client conversation is tracked with full accountability.
+</p>
 
-## 📌 Features
+<br>
 
-### Authentication & Authorization
-- Secure user authentication using JWT
-- Role-Based Access Control (RBAC)
-- Two user roles:
-  - Super User
-  - Normal User
-- Password hashing using bcrypt
+![React](https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react)
+![NodeJS](https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=node.js)
+![Express](https://img.shields.io/badge/Framework-Express-000000?style=for-the-badge&logo=express)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-316192?style=for-the-badge&logo=postgresql)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
----
-
-### User Management (Super User)
-- Create new users
-- Delete users
-- Reset user passwords
-- Manage user accounts
+</div>
 
 ---
 
-### Client Management
-- Add new clients
-- Edit client details
-- Delete clients
-- View complete client information
-- Fast client search
+# 📖 About
 
-Client information includes:
+The **Client Notes & Communication Logging System** is a centralized communication platform designed for organizations where multiple employees interact with the same clients.
+
+Instead of relying on memory or scattered communication channels, every interaction is securely stored in one place with timestamps, user information, replies, file attachments, and client details.
+
+The system ensures that every staff member has complete context before responding to a client, significantly improving customer service and internal collaboration.
+
+---
+
+# ✨ Key Features
+
+## 👥 User Management
+
+✔ Secure Login
+
+✔ JWT Authentication
+
+✔ Password Encryption
+
+✔ Role-Based Access Control (RBAC)
+
+✔ Super User & Normal User Roles
+
+---
+
+## 👤 Client Management
+
+- Add Clients
+- Update Client Details
+- Delete Clients
+- View Client Profiles
+- Search Clients Instantly
+
+Client Information includes:
+
 - Full Name
 - Phone Number
 - Email Address
@@ -43,102 +65,53 @@ Client information includes:
 
 ---
 
-### Smart Client Search
+## 🔍 Smart Search
 
-Search clients instantly using:
+Search clients using:
 
-- Phone Number
-- Email Address
-- Domain Name
-- Note ID
+- 📞 Phone Number
+- 📧 Email Address
+- 🌐 Domain Name
+- 📝 Note ID
 
 ---
 
-### Notes Management
+## 📝 Communication Notes
 
-Users can create communication records for clients.
-
-Each note contains:
+Each communication record stores:
 
 - Unique Note ID
 - Note Type
-  - Complaint
-  - Site Down
-  - General Note
-- Note Content
-- Timestamp
+- Client Details
+- Communication Content
 - Author
-- Optional File Attachment
+- Timestamp
+- File Attachments
 
-Features:
+Supported Note Types:
 
-- Add notes
-- View all notes
-- Reply to notes
-- View reply history
-- File attachments
-- Complete audit trail
-
-Notes cannot be edited or deleted, ensuring data integrity.
+- Complaint
+- Site Down
+- General Note
 
 ---
 
-### Reply System
+## 💬 Reply System
 
-Users can:
+Users can
 
 - Reply to any note
-- View complete reply history
-- See timestamps
-- See reply author
+- View reply history
+- View reply timestamps
+- See reply authors
+
+Complete communication threads are preserved.
 
 ---
 
-### Notifications
+## 📎 File Attachments
 
-Super Users receive dashboard notifications whenever a new note is created.
-
----
-
-### SMS Integration
-
-Integrated with **Text.lk SMS API**.
-
-When enabled, clients automatically receive an SMS containing their inquiry/reference ID after a new note is created.
-
----
-
-### Dashboard Analytics
-
-Includes visual analytics such as:
-
-- Total Clients
-- Total Notes
-- Complaints
-- Site Down Reports
-- General Notes
-- User Activity
-- Charts and Summary Cards
-
----
-
-### Export Reports
-
-Export communication history as:
-
-- PDF
-- Excel (.xlsx)
-
-Export options include:
-
-- Individual Client Notes
-- Complete System Notes
-
----
-
-### File Uploads
-
-Supports attachment uploads for notes.
+Supports uploading files with notes.
 
 Examples:
 
@@ -148,9 +121,52 @@ Examples:
 
 ---
 
-### Responsive Design
+## 🔔 Notifications
 
-Fully responsive interface supporting:
+Super Users automatically receive dashboard notifications whenever a new communication note is created.
+
+---
+
+## 📱 SMS Integration
+
+Integrated with **Text.lk SMS API**
+
+Automatically sends clients an SMS containing their inquiry/reference ID after a note is created.
+
+---
+
+## 📊 Analytics Dashboard
+
+Interactive dashboard displaying
+
+- Total Clients
+- Total Notes
+- Complaints
+- Site Down Reports
+- General Notes
+- User Activity
+- Charts
+- Summary Cards
+
+---
+
+## 📄 Export Reports
+
+Export communication history as
+
+- PDF
+- Excel (.xlsx)
+
+Export
+
+- Individual Client Notes
+- Entire System Notes
+
+---
+
+## 📱 Responsive Design
+
+Fully responsive for
 
 - Desktop
 - Tablet
@@ -158,58 +174,46 @@ Fully responsive interface supporting:
 
 ---
 
-## 🛠 Technology Stack
+# 🛠 Technology Stack
 
-### Frontend
-
-- React.js
-- React Router
-- Axios
-- Tailwind CSS
-- React Hot Toast
-- Lucide React
-
-### Backend
-
-- Node.js
-- Express.js
-- JWT Authentication
-- Multer
-- PDFKit
-- ExcelJS
-- Axios
-
-### Database
-
-- PostgreSQL (Neon Database)
+| Category | Technologies |
+|-----------|--------------|
+| Frontend | React.js, React Router, Axios, Tailwind CSS, Lucide React, React Hot Toast |
+| Backend | Node.js, Express.js, JWT, Multer, PDFKit, ExcelJS, Axios |
+| Database | PostgreSQL (Neon Database) |
+| Authentication | JWT + bcrypt |
+| SMS Service | Text.lk API |
+| File Storage | Local Storage |
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```
-client-notes-system/
-
-├── backend/
-│   ├── src/
-│   │   ├── config/
-│   │   ├── controllers/
-│   │   ├── middleware/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   ├── utils/
-│   │   └── uploads/
+```text
+Client-Notes-System
+│
+├── backend
+│   ├── src
+│   │   ├── config
+│   │   ├── controllers
+│   │   ├── middleware
+│   │   ├── routes
+│   │   ├── services
+│   │   ├── utils
+│   │   └── uploads
+│   │
 │   ├── package.json
 │   └── server.js
 │
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── layout/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── context/
-│   │   └── assets/
+├── frontend
+│   ├── src
+│   │   ├── assets
+│   │   ├── components
+│   │   ├── context
+│   │   ├── layout
+│   │   ├── pages
+│   │   └── services
+│   │
 │   ├── package.json
 │   └── vite.config.js
 │
@@ -218,9 +222,9 @@ client-notes-system/
 
 ---
 
-## ⚙ Installation
+# 🚀 Installation
 
-### 1. Clone the Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/yourusername/client-notes-system.git
@@ -230,7 +234,7 @@ cd client-notes-system
 
 ---
 
-### 2. Install Backend Dependencies
+## Install Backend
 
 ```bash
 cd backend
@@ -240,7 +244,7 @@ npm install
 
 ---
 
-### 3. Install Frontend Dependencies
+## Install Frontend
 
 ```bash
 cd ../frontend
@@ -250,20 +254,16 @@ npm install
 
 ---
 
-## 🗄 Database Setup
+# ⚙ Environment Variables
 
-Create a PostgreSQL database (Neon is recommended).
-
-Update your `.env` file inside the backend folder.
-
-Example:
+Create a **.env** file inside the backend folder.
 
 ```env
 PORT=5000
 
 DATABASE_URL=your_postgresql_connection_string
 
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_secret_key
 
 FRONTEND_URL=http://localhost:5173
 
@@ -274,7 +274,7 @@ SMS_API_URL=https://app.text.lk/api/v3/sms/send
 
 ---
 
-## ▶ Running the Application
+# ▶ Running the Project
 
 ### Backend
 
@@ -282,6 +282,12 @@ SMS_API_URL=https://app.text.lk/api/v3/sms/send
 cd backend
 
 npm run dev
+```
+
+Backend runs on
+
+```
+http://localhost:5000
 ```
 
 ---
@@ -294,138 +300,121 @@ cd frontend
 npm run dev
 ```
 
-Frontend:
+Frontend runs on
 
 ```
 http://localhost:5173
 ```
 
-Backend:
+---
 
-```
-http://localhost:5000
-```
+# 🔐 User Roles
+
+| Permission | Super User | Normal User |
+|------------|------------|-------------|
+| Login | ✅ | ✅ |
+| Manage Users | ✅ | ❌ |
+| Manage Clients | ✅ | ❌ |
+| Search Clients | ✅ | ✅ |
+| Add Notes | ✅ | ✅ |
+| Reply Notes | ✅ | ✅ |
+| Upload Files | ✅ | ✅ |
+| View All Notes | ✅ | ✅ |
+| Export Reports | ✅ | ❌ |
+| Dashboard Analytics | ✅ | ❌ |
+| Notifications | ✅ | ❌ |
 
 ---
 
-## 🔐 User Roles
-
-### Super User
-
-Has full access to the system.
-
-Permissions:
-
-- Manage users
-- Manage clients
-- View all notes
-- Reply to notes
-- Export reports
-- View analytics
-- Receive notifications
-
----
-
-### Normal User
-
-Permissions:
-
-- Search clients
-- View client details
-- Add notes
-- Upload attachments
-- Reply to notes
-- View communication history
-
----
-
-## 📊 Main Modules
+# 📋 Main Modules
 
 - Authentication
 - User Management
 - Client Management
 - Notes Management
-- Reply System
+- Reply Management
 - Notifications
 - SMS Integration
-- File Upload
 - Analytics Dashboard
 - Export Reports
+- File Upload System
 
 ---
 
-## 🔒 Security Features
+# 🔒 Security Features
 
 - JWT Authentication
-- Password Hashing (bcrypt)
+- bcrypt Password Hashing
 - Role-Based Access Control
 - Protected API Routes
-- Secure File Uploads
+- Secure File Upload
 - Audit Trail
 - Server-side Validation
 
 ---
 
-## 📷 Screenshots
+# 📸 Screenshots
 
-Add screenshots of:
-
-- Login Page
-- Dashboard
-- Client Management
-- Notes Page
-- Analytics Dashboard
-- Export Reports
-
-Example:
+> Add screenshots here after deployment.
 
 ```
 screenshots/
-
-login.png
-
-dashboard.png
-
-clients.png
-
-notes.png
-
-analytics.png
+│
+├── login.png
+├── dashboard.png
+├── clients.png
+├── notes.png
+├── analytics.png
+└── exports.png
 ```
 
----
+Example
 
-## 🚀 Future Improvements
-
-- Email Notifications
-- Advanced Search Filters
-- SMS Delivery Logs
-- Cloud Storage (AWS S3)
-- Activity Logs
-- Multi-Organization Support
-- Dark Mode
-- REST API Documentation
-- Two-Factor Authentication
-- Real-Time Notifications using WebSockets
+| Login | Dashboard |
+|--------|-----------|
+| ![](screenshots/login.png) | ![](screenshots/dashboard.png) |
 
 ---
 
-## 📄 Functional Highlights
+# 🎯 Future Enhancements
 
-- Centralized communication tracking
-- Complete client communication history
-- Fast client search
-- File attachment support
-- Reply management
-- SMS notifications
-- Dashboard analytics
-- Export to PDF & Excel
-- Secure authentication
-- Responsive UI
+- 🔵 Real-time Notifications
+- 🔵 Email Notifications
+- 🔵 AWS S3 File Storage
+- 🔵 Activity Logs
+- 🔵 Advanced Search Filters
+- 🔵 Multi-Organization Support
+- 🔵 REST API Documentation
+- 🔵 Dark Mode
+- 🔵 Two-Factor Authentication
 
 ---
 
-## 👨‍💻 Developed By
+# 📈 Functional Highlights
+
+✅ Centralized Client Communication
+
+✅ Communication History
+
+✅ File Attachments
+
+✅ Reply Threads
+
+✅ Dashboard Notifications
+
+✅ SMS Integration
+
+✅ Analytics Dashboard
+
+✅ Export to PDF & Excel
+
+✅ Responsive UI
+
+✅ Secure Authentication
+
+---
+
+# 👨‍💻 Developer
 
 **Bhagya Subhashini**
 
@@ -433,17 +422,9 @@ Bachelor of Information Technology (Undergraduate)
 
 ---
 
-## 📄 License
+# 🙏 Acknowledgements
 
-This project was developed as an academic and organizational software solution.
-
-You are free to fork and modify it for learning purposes. Please retain appropriate attribution where applicable.
-
----
-
-## 🙏 Acknowledgements
-
-Special thanks to:
+Special Thanks
 
 - ITX Digital Services (PVT) LTD
 - React.js
@@ -456,7 +437,20 @@ Special thanks to:
 
 ---
 
-## ⭐ If you found this project helpful
+# 📜 License
 
-Please consider giving the repository a **Star ⭐** on GitHub.
-````
+This project is released under the **MIT License**.
+
+Feel free to use and modify it for learning purposes.
+
+---
+
+<div align="center">
+
+## ⭐ If you found this project useful
+
+Please consider giving this repository a **Star ⭐**
+
+**Happy Coding! 🚀**
+
+</div>
